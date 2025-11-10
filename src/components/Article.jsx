@@ -25,7 +25,6 @@ export default function Article({ articles, setArticles, item, index }) {
 			setArticles={setArticles}
 			newArticle={newArticle}
 			setNewArticle={setNewArticle}
-			isUpdating={isUpdating}
 			setIsUpdating={setIsUpdating}
 			index={index}
 		>

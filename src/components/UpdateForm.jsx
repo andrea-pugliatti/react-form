@@ -4,7 +4,6 @@ export default function UpdateForm({
 	newArticle,
 	setNewArticle,
 	index,
-	isUpdating,
 	setIsUpdating,
 	children,
 }) {

@@ -11,26 +11,9 @@ export default function Form({
 	const handleAddArticle = (event) => {
 		event.preventDefault();
 
-		if (newArticle.title.length > 3 && !isUpdating) {
+		if (newArticle.title.length > 3) {
 			const updatedList = [...articles, newArticle];
 			setArticles(updatedList);
-			setIsUpdating(false);
-		}
-
-		if (isUpdating && newArticle.title.length > 3) {
-			const updatedList = articles.map((article, articleIndex) => {
-				return articleIndex !== index
-					? article
-					: {
-							id: article.id,
-							title: updatedTitle,
-							article: article.article,
-						};
-			});
-
-			setArticles(updatedList);
-			setIsUpdating(false);
-			console.log(articles);
 		}
 
 		setNewArticle({

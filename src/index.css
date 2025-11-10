@@ -31,6 +31,18 @@ h1 {
 	/* &::marker {
 		content: "👁️ ";
 	} */
+	button {
+		margin-inline-start: 1rem;
+		padding: 0.4rem 0.6rem 0.2rem 0.6rem;
+		border: 1px solid rgb(255, 81, 81);
+		background-color: rgb(255, 255, 255);
+		color: rgb(255, 81, 81);
+		border-radius: 10px;
+		&:hover {
+			color: rgb(255, 255, 255);
+			background-color: rgb(255, 81, 81);
+		}
+	}
 }
 
 .add-article {

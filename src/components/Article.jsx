@@ -26,7 +26,11 @@ export default function Article({ articles, setArticles, item, index }) {
 		<li className="article-title">
 			{item.title}
 
-			<button type="submit" onClick={() => handleUpdateArticle(index)}>
+			<button
+				type="submit"
+				className="update-button"
+				onClick={() => handleUpdateArticle(index)}
+			>
 				{/* I don't want to install bootstrap icons for a single icon */}
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +49,11 @@ export default function Article({ articles, setArticles, item, index }) {
 				</svg>
 			</button>
 
-			<button type="submit" onClick={() => handleRemoveArticle(index)}>
+			<button
+				type="submit"
+				className="remove-button"
+				onClick={() => handleRemoveArticle(index)}
+			>
 				{/* I don't want to install bootstrap icons for a single icon */}
 				<svg
 					xmlns="http://www.w3.org/2000/svg"

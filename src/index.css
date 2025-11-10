@@ -11,5 +11,22 @@ body {
 .container {
 	max-width: 1000px;
 	margin: 0 auto;
-	padding: 2rem;
+}
+
+h1 {
+	padding: 0.5rem 0;
+}
+
+.article-list {
+	list-style: none;
+	padding: 1rem;
+}
+
+.article-title {
+	font-size: 1.4rem;
+	padding: 0.2rem;
+
+	/* &::marker {
+		content: "👁️ ";
+	} */
 }

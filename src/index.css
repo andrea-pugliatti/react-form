@@ -22,6 +22,29 @@ h1 {
 	padding: 1rem;
 	border: 2px dashed black;
 	width: fit-content;
+
+	input {
+		padding: 0.4rem 1rem;
+		margin: 0.4rem;
+		border: 1px dashed rgb(118, 118, 118);
+		background-color: rgb(238, 238, 238);
+		border-radius: 10px;
+		font-size: 1.1rem;
+	}
+
+	button {
+		font-size: 1.1rem;
+		margin-inline-start: 1rem;
+		padding: 0.4rem 1rem;
+		border-radius: 10px;
+		border: 1px solid rgb(81, 81, 155);
+		background-color: rgb(255, 255, 255);
+		color: rgb(81, 81, 155);
+		&:hover {
+			color: rgb(255, 255, 255);
+			background-color: rgb(81, 81, 155);
+		}
+	}
 }
 
 .article-title {

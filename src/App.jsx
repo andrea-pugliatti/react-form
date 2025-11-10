@@ -42,12 +42,16 @@ function App() {
 	return (
 		<div className="container">
 			<h1>React Blog</h1>
-			<Form
-				articles={articles}
-				setArticles={setArticles}
-				newArticle={newArticle}
-				setNewArticle={setNewArticle}
-			/>
+			<div className="add-article">
+				<Form
+					articles={articles}
+					setArticles={setArticles}
+					newArticle={newArticle}
+					setNewArticle={setNewArticle}
+				>
+					Aggiungi
+				</Form>
+			</div>
 
 			<ul className="article-list">
 				{articles.map((item, index) => (

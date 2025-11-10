@@ -1,4 +1,16 @@
+import { useState } from "react";
+import Form from "./Form";
+
 export default function Article({ articles, setArticles, item, index }) {
+	const emptyArticle = {
+		id: 0,
+		title: "",
+		article: "",
+	};
+
+	const [newArticle, setNewArticle] = useState(emptyArticle);
+	const [isUpdating, setIsUpdating] = useState(false);
+
 	const handleRemoveArticle = (index) => {
 		const updatedList = articles.filter((_, articleIndex) => {
 			return articleIndex !== index;
@@ -7,29 +19,26 @@ export default function Article({ articles, setArticles, item, index }) {
 		setArticles(updatedList);
 	};
 
-	const handleUpdateArticle = (index) => {
-		const updatedTitle = prompt("Inserisci il nuovo titolo:");
-		const updatedList = articles.map((article, articleIndex) => {
-			return articleIndex !== index
-				? article
-				: {
-						id: article.id,
-						title: updatedTitle,
-						article: article.title,
-					};
-		});
-
-		setArticles(updatedList);
-	};
-
-	return (
+	return isUpdating ? (
+		<Form
+			articles={articles}
+			setArticles={setArticles}
+			newArticle={newArticle}
+			setNewArticle={setNewArticle}
+			isUpdating={isUpdating}
+			setIsUpdating={setIsUpdating}
+			index={index}
+		>
+			Aggiorna
+		</Form>
+	) : (
 		<li className="article-title">
 			{item.title}
 
 			<button
 				type="submit"
 				className="update-button"
-				onClick={() => handleUpdateArticle(index)}
+				onClick={() => setIsUpdating(true)}
 			>
 				{/* I don't want to install bootstrap icons for a single icon */}
 				<svg

@@ -1,45 +1,12 @@
-export default function Form({
+export default function UpdateForm({
 	articles,
 	setArticles,
 	newArticle,
 	setNewArticle,
 	index,
-	isUpdating,
 	setIsUpdating,
 	children,
 }) {
-	const handleAddArticle = (event) => {
-		event.preventDefault();
-
-		if (newArticle.title.length > 3 && !isUpdating) {
-			const updatedList = [...articles, newArticle];
-			setArticles(updatedList);
-			setIsUpdating(false);
-		}
-
-		if (isUpdating && newArticle.title.length > 3) {
-			const updatedList = articles.map((article, articleIndex) => {
-				return articleIndex !== index
-					? article
-					: {
-							id: article.id,
-							title: updatedTitle,
-							article: article.article,
-						};
-			});
-
-			setArticles(updatedList);
-			setIsUpdating(false);
-			console.log(articles);
-		}
-
-		setNewArticle({
-			id: 0,
-			title: "",
-			article: "",
-		});
-	};
-
 	const handleUpdateArticle = (event) => {
 		event.preventDefault();
 
@@ -66,11 +33,7 @@ export default function Form({
 	};
 
 	return (
-		<form
-			onSubmit={(e) =>
-				isUpdating ? handleUpdateArticle(e) : handleAddArticle(e)
-			}
-		>
+		<form onSubmit={handleUpdateArticle}>
 			<input
 				type="text"
 				value={newArticle.title}

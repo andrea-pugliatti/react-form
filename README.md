@@ -1,6 +1,5 @@
 # React Blog Form
 
-
 ### Milestone 1
 
 Creare una pagina che visualizzi una lista di articoli, mostrandone solo il titolo (per la lista usate un array di oggetti).

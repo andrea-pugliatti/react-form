@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Form from "./Form";
+import UpdateForm from "./UpdateForm";
 
 export default function Article({ articles, setArticles, item, index }) {
 	const emptyArticle = {
@@ -20,7 +20,7 @@ export default function Article({ articles, setArticles, item, index }) {
 	};
 
 	return isUpdating ? (
-		<Form
+		<UpdateForm
 			articles={articles}
 			setArticles={setArticles}
 			newArticle={newArticle}
@@ -30,7 +30,7 @@ export default function Article({ articles, setArticles, item, index }) {
 			index={index}
 		>
 			Aggiorna
-		</Form>
+		</UpdateForm>
 	) : (
 		<li className="article-title">
 			{item.title}

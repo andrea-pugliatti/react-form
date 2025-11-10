@@ -1,6 +1,6 @@
 import { useState } from "react";
+import AddForm from "./components/AddForm";
 import Article from "./components/Article";
-import Form from "./components/Form";
 
 function App() {
 	const articleList = [
@@ -43,14 +43,14 @@ function App() {
 		<div className="container">
 			<h1>React Blog</h1>
 			<div className="add-article">
-				<Form
+				<AddForm
 					articles={articles}
 					setArticles={setArticles}
 					newArticle={newArticle}
 					setNewArticle={setNewArticle}
 				>
 					Aggiungi
-				</Form>
+				</AddForm>
 			</div>
 
 			<ul className="article-list">

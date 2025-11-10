@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Form from "./components/Form";
 
 function App() {
 	const articleList = [
@@ -37,13 +38,6 @@ function App() {
 	const [articles, setArticles] = useState(articleList);
 	const [newArticle, setNewArticle] = useState(emptyArticle);
 
-	const handleAddArticle = (event) => {
-		event.preventDefault();
-		const updatedList = [...articles, newArticle];
-		setArticles(updatedList);
-		console.log(`Added: ${newArticle}`);
-	};
-
 	const handleRemoveArticle = (index) => {
 		const updatedList = articles.filter((_, articleIndex) => {
 			return articleIndex !== index;
@@ -56,21 +50,12 @@ function App() {
 	return (
 		<div className="container">
 			<h1>React Blog</h1>
-
-			<form onSubmit={handleAddArticle} className="add-article">
-				<input
-					type="text"
-					value={newArticle.title}
-					onChange={(event) =>
-						setNewArticle({
-							id: articles.length + 1,
-							title: event.target.value,
-							article: "Lorem ipsum",
-						})
-					}
-				/>
-				<button type="submit">Aggiungi</button>
-			</form>
+			<Form
+				articles={articles}
+				setArticles={setArticles}
+				newArticle={newArticle}
+				setNewArticle={setNewArticle}
+			/>
 
 			<ul className="article-list">
 				{articles.map((item, index) => (

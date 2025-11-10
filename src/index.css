@@ -20,6 +20,8 @@ h1 {
 .article-list {
 	list-style: none;
 	padding: 1rem;
+	border: 2px dashed black;
+	width: fit-content;
 }
 
 .article-title {
@@ -29,4 +31,20 @@ h1 {
 	/* &::marker {
 		content: "👁️ ";
 	} */
+}
+
+.add-article {
+	padding: 1rem;
+	* + * {
+		margin: 1rem;
+	}
+
+	input,
+	button {
+		padding: 0.4rem 1rem;
+		border: 2px dashed rgb(118, 118, 118);
+		background-color: rgb(238, 238, 238);
+		border-radius: 10px;
+		font-size: 1.1rem;
+	}
 }

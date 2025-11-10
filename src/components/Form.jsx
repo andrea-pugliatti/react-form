@@ -6,8 +6,17 @@ export default function Form({
 }) {
 	const handleAddArticle = (event) => {
 		event.preventDefault();
-		const updatedList = [...articles, newArticle];
-		setArticles(updatedList);
+
+		if (newArticle.title.length > 3) {
+			const updatedList = [...articles, newArticle];
+			setArticles(updatedList);
+		}
+
+		setNewArticle({
+			id: 0,
+			title: "",
+			article: "",
+		});
 	};
 
 	return (
